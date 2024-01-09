@@ -20,7 +20,7 @@ public class InterfaceController : IUIController
     private readonly string scroller_weapon = "Weapon_Scroller_Anim";
 
 
-				public InterfaceController ()
+    public InterfaceController ()
     {
         
     }
