@@ -47,7 +47,7 @@ public class InterfaceController : IUIController
     {
         if (ammo < 0) _ammoText.text = "∞";
         //SetAmmo(ammo);
-				}
+    }
 
     public override int GetAmmo()
     {
@@ -66,7 +66,7 @@ public class InterfaceController : IUIController
         {
             _ammoText.text = "∞";
             return;
-								}
+	}
         _ammoText.text = ammo.ToString();
     }
 
@@ -86,37 +86,34 @@ public class InterfaceController : IUIController
     {
         if(keyboardControl != null)
         {
-												keyboardControl.DetectKey(out KeyboardControls.All_keys key);
-												if (key == KeyboardControls.All_keys.PISTOL)
-												{
-																key = KeyboardControls.All_keys.DEFAULT;
-																if (animator != null)
-																{
-                    Animator_Play();
+		keyboardControl.DetectKey(out KeyboardControls.All_keys key);
+		if (key == KeyboardControls.All_keys.PISTOL)
+		{
+			key = KeyboardControls.All_keys.DEFAULT;
+			if (animator != null)
+			{
+                    		Animator_Play();
+			}
 
-																}
+		}
+		else if (key == KeyboardControls.All_keys.SHOTGUN)
+		{
+			key = KeyboardControls.All_keys.DEFAULT;
+			if (animator != null)
+			{
+				Animator_Play();
 
-												}
-												else if (key == KeyboardControls.All_keys.SHOTGUN)
-												{
-																key = KeyboardControls.All_keys.DEFAULT;
-																if (animator != null)
-																{
-																				Animator_Play();
+			}
 
-																}
-
-												}
-												else if (key == KeyboardControls.All_keys.RIFLE)
-												{
-																key = KeyboardControls.All_keys.DEFAULT;
-																if (animator != null)
-																{
-																				Animator_Play();
-
-																}
-
-												}
-								}
+		}
+		else if (key == KeyboardControls.All_keys.RIFLE)
+		{
+			key = KeyboardControls.All_keys.DEFAULT;
+			if (animator != null)
+			{
+				Animator_Play();
+			}
+		}
+	}
     }
 }
